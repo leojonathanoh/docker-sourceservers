@@ -3,7 +3,7 @@
 FROM startersclan/steamcmd:git-20190605.0.0
 
 ARG SERVER_DIR=/server
-ARG APPMANIFEST_AR_URL=https://github.com/startersclan/hlds-appmanifest/archive/v1.0.0.tar.gz
+ARG APPMANIFEST_AR_URL=https://github.com/leojonathanoh/hlds-appmanifest/archive/refs/heads/fix/add-fixed-manifests-for-hlds.tar.gz
 ARG APPID
 ARG MOD
 ARG FIX_APPMANIFEST=false
@@ -18,9 +18,9 @@ RUN echo "[BUILD] SERVER_DIR: $SERVER_DIR"; \
     echo "[BUILD] FIX_APPMANIFEST: $FIX_APPMANIFEST"; \
     echo "[BUILD] INSTALL_COUNT: $INSTALL_COUNT"; \
     if [ "$APPID" = 90 ] && [ -n "$MOD" ]; then \
-        steamcmdArgs="+login anonymous +force_install_dir $SERVER_DIR +app_set_config $APPID mod $MOD +app_update $APPID validate +quit"; \
+        steamcmdArgs="+force_install_dir $SERVER_DIR +login anonymous +app_set_config $APPID mod $MOD +app_update $APPID validate +quit"; \
     else \
-        steamcmdArgs="+login anonymous +force_install_dir $SERVER_DIR +app_update $APPID validate +quit"; \
+        steamcmdArgs="+force_install_dir $SERVER_DIR +login anonymous +app_update $APPID validate +quit"; \
     fi; \
     echo "[BUILD] steamcmd arguments: $steamcmdArgs"; \
     echo "[BUILD] Downloading game"; \

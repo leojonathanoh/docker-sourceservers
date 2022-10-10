@@ -99,7 +99,11 @@ docker version
 set -e
 
 # Docker registry login
-echo "$REGISTRY_PASSWORD" | docker login -u "$REGISTRY_USER" --password-stdin
+if [ -n "$NO_PUSH" ]; then
+    :
+else
+    echo "$REGISTRY_PASSWORD" | docker login -u "$REGISTRY_USER" --password-stdin
+fi
 
 # Build / Update the game image
 if [ "$PIPELINE" = 'build' ]; then
@@ -180,4 +184,8 @@ if [ ! "$NO_PUSH" = 'true' ]; then
 fi
 
 # Docker registry logout
-docker logout
+if [ -n "$NO_PUSH" ]; then
+    :
+else
+    docker logout
+fi
