@@ -52,4 +52,10 @@ RUN --mount=type=secret,id=STEAM_USERNAME \
         linux32/steamconsole.so \
         update_hosts_cached.vdf \
         /root/.steam \
-        /root/Steam
+        # Do not remove /root/Steam/appcache, because it will cause steamcmd to redownload the entire game from scratch for hlds/* games
+        # /root/Steam/appcache \
+        /root/Steam/config \
+        /root/Steam/depotcache \
+        /root/Steam/logs \
+        /root/Steam/steamapps \
+        /root/Steam/userdata
