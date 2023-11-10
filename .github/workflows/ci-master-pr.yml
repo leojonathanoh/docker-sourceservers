@@ -128,8 +128,11 @@ jobs:
     strategy:
       matrix:
         ENGINE: [srcds]
-        GAME: [csgo, cstrike, dod, hl2mp, left4dead, left4dead2, tf]
+        GAME: [cs2, csgo, cstrike, dod, hl2mp, left4dead, left4dead2, tf]
         include:
+        - ENGINE: srcds
+          GAME: cs2
+          GAME_FULLNAME: 'Counter-Strike 2'
         - ENGINE: srcds
           GAME: csgo
           GAME_FULLNAME: 'Counter-Strike: Global Offensive'

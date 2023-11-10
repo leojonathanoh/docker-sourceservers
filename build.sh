@@ -163,7 +163,12 @@ if [ "$APPID" = 90 ]; then
 else
     DOCKER_REPOSITORY="${DOCKER_REPOSITORY:-${REGISTRY_SOURCE:?err}/$GAME}"
     GAME_ENGINE='srcds'
-    GAME_BIN='srcds_linux'
+    # srcds/cs2
+    if [ "$APPID" = 730 ]; then
+        GAME_BIN='game/bin/linuxsteamrt64/cs2'
+    else
+        GAME_BIN='srcds_linux'
+    fi
 fi
 if [ "$PIPELINE" = 'build' ]; then
     GAME_IMAGE_CLEAN="$DOCKER_REPOSITORY:$GAME_VERSION"
@@ -264,19 +269,26 @@ if [ ! "$NO_TEST" = 'true' ]; then
     date
     time docker run -t --rm "$GAME_IMAGE" 'printenv && ls -al'
     date
-    time docker run -t --rm "$GAME_IMAGE" "$GAME_BIN -game $GAME +version +exit" | tee "$TEST_DIR/test"
+    # srcds/cs2
+    if  [ "$APPID" = 730 ]; then
+        time docker run -t --rm "$GAME_IMAGE" "$GAME_BIN -dedicated +status +quit"
+    else
+        time docker run -t --rm "$GAME_IMAGE" "$GAME_BIN -game $GAME +version +exit" | tee "$TEST_DIR/test"
+    fi
     date
 
-    # Verify game version of the game image matches the value of GAME_VERSION
-    echo 'Verifying game image game version'
-    GAME_IMAGE_VERSION_LINES=$( cat "$TEST_DIR/test" | grep -iE '\bexe\b|version' | sed 's/[^0-9]//g' )
-    if ! echo "$GAME_IMAGE_VERSION_LINES" | grep -E "^$GAME_VERSION" > /dev/null; then
-        echo "Game version does not match GAME_VERSION=$GAME_VERSION"
-        echo 'GAME_IMAGE_VERSION_LINES:'
-        echo "$GAME_IMAGE_VERSION_LINES"
-        exit 1
+    if  [ ! "$APPID" = 730 ]; then
+        # Verify game version of the game image matches the value of GAME_VERSION
+        echo 'Verifying game image game version'
+        GAME_IMAGE_VERSION_LINES=$( cat "$TEST_DIR/test" | grep -iE '\bexe\b|version' | sed 's/[^0-9]//g' )
+        if ! echo "$GAME_IMAGE_VERSION_LINES" | grep -E "^$GAME_VERSION" > /dev/null; then
+            echo "Game version does not match GAME_VERSION=$GAME_VERSION"
+            echo 'GAME_IMAGE_VERSION_LINES:'
+            echo "$GAME_IMAGE_VERSION_LINES"
+            exit 1
+        fi
+        rm -f "$TEST_DIR/test"
     fi
-    rm -f "$TEST_DIR/test"
 fi
 
 # Push the game image
