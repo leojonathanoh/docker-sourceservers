@@ -283,7 +283,7 @@ if [ ! "$NO_TEST" = 'true' ]; then
             && docker rm -f "$CONTAINER_ID" \
             || docker rm -f "$CONTAINER_ID"
     else
-        time docker run -t --rm "$GAME_IMAGE" "$GAME_BIN -game $GAME +version +exit"
+        time docker run -t --rm "$GAME_IMAGE" "$GAME_BIN -game $GAME +version +exit" | tee "$TEST_DIR/test"
     fi
     date
 
