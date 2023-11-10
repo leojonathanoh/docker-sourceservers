@@ -1,4 +1,4 @@
-Loaded /server/game/bin/linuxsteamrt64/libengine2.so, got 0x562466c6f340
+Loaded /server/game/bin/linuxsteamrt64/libengine2.so, got 0x56117e1a7340
 
 Console initialized.
 Steam AppId(730), BreakpadId(2347771)
@@ -11,17 +11,17 @@ Setting breakpad minidump AppID = 2347773
 Forcing breakpad minidump interfaces to load
 Looking up breakpad interfaces from steamclient
 Calling BreakpadMiniDumpSystemInit
-Loaded libSDL3.so.0, got 0x562466d6e1b0
-Loaded /server/game/bin/linuxsteamrt64/libtier0.so, got 0x562466c59010
+Loaded libSDL3.so.0, got 0x56117e2a61b0
+Loaded /server/game/bin/linuxsteamrt64/libtier0.so, got 0x56117e191010
 Visibility enabled.
-Loaded /server/game/bin/linuxsteamrt64/libfilesystem_stdio.so, got 0x562466d6e670
+Loaded /server/game/bin/linuxsteamrt64/libfilesystem_stdio.so, got 0x56117e2a6670
 USRLOCAL path not found!
-Loaded /server/game/bin/linuxsteamrt64/liblocalize.so, got 0x562466d80b80
-Loaded /server/game/bin/linuxsteamrt64/librendersystemempty.so, got 0x562466d92c70
-Loaded /server/game/bin/linuxsteamrt64/libresourcesystem.so, got 0x562466da5180
-Loaded /server/game/bin/linuxsteamrt64/libschemasystem.so, got 0x562466db7690
+Loaded /server/game/bin/linuxsteamrt64/liblocalize.so, got 0x56117e2b8b80
+Loaded /server/game/bin/linuxsteamrt64/librendersystemempty.so, got 0x56117e2cac70
+Loaded /server/game/bin/linuxsteamrt64/libresourcesystem.so, got 0x56117e2dd180
+Loaded /server/game/bin/linuxsteamrt64/libschemasystem.so, got 0x56117e2ef690
 Trying to set dxlevel (111) which is higher than the card can support (110)!
-Loaded /server/game/bin/linuxsteamrt64/libmaterialsystem2.so, got 0x562466dc9780
+Loaded /server/game/bin/linuxsteamrt64/libmaterialsystem2.so, got 0x56117e301780
 ---------------
 Path ID:             File Path:
 ADDONS               "/server/game/csgo_addons/" 
@@ -66,17 +66,17 @@ SHADER_SOURCE        "/server/src/shaders/core/"
 SHADER_SOURCE_MOD    "/server/src/shaders/csgo/" 
 SHADER_SOURCE_ROOT   "/server/src/shaders/" 
 command line arguments:
--dedicated -port 27015 +map de_dust2 +quit
-Loaded /server/game/bin/linuxsteamrt64/libmeshsystem.so, got 0x562466ddc0b0
-Loaded /server/game/bin/linuxsteamrt64/libworldrenderer.so, got 0x562466dee1a0
-Loaded /server/game/bin/linuxsteamrt64/libpulse_system.so, got 0x562466e00ad0
-Loaded /server/game/bin/linuxsteamrt64/libvscript.so, got 0x562466e154a0
-Loaded /server/game/bin/linuxsteamrt64/libnetworksystem.so, got 0x562466e27590
-Loaded /server/game/bin/linuxsteamrt64/libanimationsystem.so, got 0x562466e3b780
-Loaded /server/game/bin/linuxsteamrt64/libvphysics2.so, got 0x562466e51a70
-Loaded /server/game/bin/linuxsteamrt64/libsoundsystem.so, got 0x562466e647c0
-Loaded /server/game/bin/linuxsteamrt64/libscenesystem.so, got 0x562466e7aab0
-Loaded /server/game/bin/linuxsteamrt64/libv8system.so, got 0x562466e90140
+-dedicated +map de_dust2 +quit
+Loaded /server/game/bin/linuxsteamrt64/libmeshsystem.so, got 0x56117e3140b0
+Loaded /server/game/bin/linuxsteamrt64/libworldrenderer.so, got 0x56117e3261a0
+Loaded /server/game/bin/linuxsteamrt64/libpulse_system.so, got 0x56117e338ad0
+Loaded /server/game/bin/linuxsteamrt64/libvscript.so, got 0x56117e34d4a0
+Loaded /server/game/bin/linuxsteamrt64/libnetworksystem.so, got 0x56117e35f590
+Loaded /server/game/bin/linuxsteamrt64/libanimationsystem.so, got 0x56117e373780
+Loaded /server/game/bin/linuxsteamrt64/libvphysics2.so, got 0x56117e389a70
+Loaded /server/game/bin/linuxsteamrt64/libsoundsystem.so, got 0x56117e39c7c0
+Loaded /server/game/bin/linuxsteamrt64/libscenesystem.so, got 0x56117e3b2ab0
+Loaded /server/game/bin/linuxsteamrt64/libv8system.so, got 0x56117e3c8140
 Network System Initialized
 Loaded /server/game/bin/linuxsteamrt64/libserver_valve.so, got (nil)
  failed to dlopen /server/game/bin/linuxsteamrt64/libserver_valve.so error=/server/game/bin/linuxsteamrt64/libserver_valve.so: cannot open shared object file: No such file or directory
@@ -84,13 +84,13 @@ Loaded /server/game/bin/linuxsteamrt64/libserver_valve.so, got (nil)
 Loaded libserver_valve.so, got (nil)
  failed to dlopen libserver_valve.so error=libserver_valve.so: cannot open shared object file: No such file or directory
  failed to dlopen "libserver_valve.so" error=libserver_valve.so: cannot open shared object file: No such file or directory
-Loaded /server/game/csgo/bin/linuxsteamrt64/libserver.so, got 0x562466ea9f40
+Loaded /server/game/csgo/bin/linuxsteamrt64/libserver.so, got 0x56117e3e1f40
 Physics Console Communications is not initialized
-Loaded /server/game/bin/linuxsteamrt64/libengine2.so, got 0x562466c6f340
-Loaded /server/game/csgo/bin/linuxsteamrt64/libhost.so, got 0x562466eda6f0
-Loaded /server/game/bin/linuxsteamrt64/libscenefilecache.so, got 0x562466eedc80
-Loaded /server/game/bin/linuxsteamrt64/libparticles.so, got 0x562466effd70
-Loaded /server/game/csgo/bin/linuxsteamrt64/libmatchmaking.so, got 0x562466f13720
+Loaded /server/game/bin/linuxsteamrt64/libengine2.so, got 0x56117e1a7340
+Loaded /server/game/csgo/bin/linuxsteamrt64/libhost.so, got 0x56117e4126f0
+Loaded /server/game/bin/linuxsteamrt64/libscenefilecache.so, got 0x56117e425c80
+Loaded /server/game/bin/linuxsteamrt64/libparticles.so, got 0x56117e437d70
+Loaded /server/game/csgo/bin/linuxsteamrt64/libmatchmaking.so, got 0x56117e44b720
 No .vcds loaded or no scenes/scenes.vrman
 GameTypes: missing mapgroupsSP entry for game type/mode (custom/custom).
 GameTypes: missing mapgroupsSP entry for game type/mode (cooperative/cooperative).
@@ -98,8 +98,8 @@ GameTypes: missing mapgroupsSP entry for game type/mode (cooperative/coopmission
 Event System loaded 93 events from file: vpk:/server/game/core/pak01.vpk:resource/core.gameevents.
 Event System loaded 50 events from file: vpk:/server/game/csgo/pak01.vpk:resource/game.gameevents.
 Event System loaded 152 events from file: vpk:/server/game/csgo/pak01.vpk:./resource/mod.gameevents.
-CEntitySystem::BuildEntityNetworking (parallel build of server) took 19.194 msecs for 218 out of 297 classes
-[STARTUP] {2.102} server module init ok
+CEntitySystem::BuildEntityNetworking (parallel build of server) took 16.027 msecs for 218 out of 297 classes
+[STARTUP] {2.113} server module init ok
 CHostStateMgr::QueueNewRequest( Idle (console), 1 )
 Source2Init OK
 HostStateRequest::Start(HSR_IDLE):  loop(console) id(1) addons() desc(Idle (console))
