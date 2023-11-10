@@ -46,6 +46,14 @@ jobs:
         STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
         STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
 
+  test-game-image-game-version:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Test
+      run: |
+        ./test/test-game-image-game-version.sh
+
   update-draft-release:
     needs:
     - test-build-hlds
