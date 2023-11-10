@@ -1,4 +1,4 @@
-eLoaded /server/game/bin/linuxsteamrt64/libengine2.so, got 0x56036ca6f2b0
+Loaded /server/game/bin/linuxsteamrt64/libengine2.so, got 0x562466c6f340
 
 Console initialized.
 Steam AppId(730), BreakpadId(2347771)
@@ -11,17 +11,17 @@ Setting breakpad minidump AppID = 2347773
 Forcing breakpad minidump interfaces to load
 Looking up breakpad interfaces from steamclient
 Calling BreakpadMiniDumpSystemInit
-Loaded libSDL3.so.0, got 0x56036cb6d8a0
-Loaded /server/game/bin/linuxsteamrt64/libtier0.so, got 0x56036ca58f80
+Loaded libSDL3.so.0, got 0x562466d6e1b0
+Loaded /server/game/bin/linuxsteamrt64/libtier0.so, got 0x562466c59010
 Visibility enabled.
-Loaded /server/game/bin/linuxsteamrt64/libfilesystem_stdio.so, got 0x56036cb6dd60
+Loaded /server/game/bin/linuxsteamrt64/libfilesystem_stdio.so, got 0x562466d6e670
 USRLOCAL path not found!
-Loaded /server/game/bin/linuxsteamrt64/liblocalize.so, got 0x56036cb80270
-Loaded /server/game/bin/linuxsteamrt64/librendersystemempty.so, got 0x56036cb92360
-Loaded /server/game/bin/linuxsteamrt64/libresourcesystem.so, got 0x56036cba4870
-Loaded /server/game/bin/linuxsteamrt64/libschemasystem.so, got 0x56036cbb6d80
+Loaded /server/game/bin/linuxsteamrt64/liblocalize.so, got 0x562466d80b80
+Loaded /server/game/bin/linuxsteamrt64/librendersystemempty.so, got 0x562466d92c70
+Loaded /server/game/bin/linuxsteamrt64/libresourcesystem.so, got 0x562466da5180
+Loaded /server/game/bin/linuxsteamrt64/libschemasystem.so, got 0x562466db7690
 Trying to set dxlevel (111) which is higher than the card can support (110)!
-Loaded /server/game/bin/linuxsteamrt64/libmaterialsystem2.so, got 0x56036cbc8e70
+Loaded /server/game/bin/linuxsteamrt64/libmaterialsystem2.so, got 0x562466dc9780
 ---------------
 Path ID:             File Path:
 ADDONS               "/server/game/csgo_addons/" 
@@ -66,17 +66,17 @@ SHADER_SOURCE        "/server/src/shaders/core/"
 SHADER_SOURCE_MOD    "/server/src/shaders/csgo/" 
 SHADER_SOURCE_ROOT   "/server/src/shaders/" 
 command line arguments:
--dedicated +status +quit
-Loaded /server/game/bin/linuxsteamrt64/libmeshsystem.so, got 0x56036cbdb7a0
-Loaded /server/game/bin/linuxsteamrt64/libworldrenderer.so, got 0x56036cbed890
-Loaded /server/game/bin/linuxsteamrt64/libpulse_system.so, got 0x56036cc001c0
-Loaded /server/game/bin/linuxsteamrt64/libvscript.so, got 0x56036cc14b90
-Loaded /server/game/bin/linuxsteamrt64/libnetworksystem.so, got 0x56036cc26c80
-Loaded /server/game/bin/linuxsteamrt64/libanimationsystem.so, got 0x56036cc3ae70
-Loaded /server/game/bin/linuxsteamrt64/libvphysics2.so, got 0x56036cc51160
-Loaded /server/game/bin/linuxsteamrt64/libsoundsystem.so, got 0x56036cc63eb0
-Loaded /server/game/bin/linuxsteamrt64/libscenesystem.so, got 0x56036cc7a1a0
-Loaded /server/game/bin/linuxsteamrt64/libv8system.so, got 0x56036cc8f830
+-dedicated -port 27015 +map de_dust2 +quit
+Loaded /server/game/bin/linuxsteamrt64/libmeshsystem.so, got 0x562466ddc0b0
+Loaded /server/game/bin/linuxsteamrt64/libworldrenderer.so, got 0x562466dee1a0
+Loaded /server/game/bin/linuxsteamrt64/libpulse_system.so, got 0x562466e00ad0
+Loaded /server/game/bin/linuxsteamrt64/libvscript.so, got 0x562466e154a0
+Loaded /server/game/bin/linuxsteamrt64/libnetworksystem.so, got 0x562466e27590
+Loaded /server/game/bin/linuxsteamrt64/libanimationsystem.so, got 0x562466e3b780
+Loaded /server/game/bin/linuxsteamrt64/libvphysics2.so, got 0x562466e51a70
+Loaded /server/game/bin/linuxsteamrt64/libsoundsystem.so, got 0x562466e647c0
+Loaded /server/game/bin/linuxsteamrt64/libscenesystem.so, got 0x562466e7aab0
+Loaded /server/game/bin/linuxsteamrt64/libv8system.so, got 0x562466e90140
 Network System Initialized
 Loaded /server/game/bin/linuxsteamrt64/libserver_valve.so, got (nil)
  failed to dlopen /server/game/bin/linuxsteamrt64/libserver_valve.so error=/server/game/bin/linuxsteamrt64/libserver_valve.so: cannot open shared object file: No such file or directory
@@ -84,13 +84,13 @@ Loaded /server/game/bin/linuxsteamrt64/libserver_valve.so, got (nil)
 Loaded libserver_valve.so, got (nil)
  failed to dlopen libserver_valve.so error=libserver_valve.so: cannot open shared object file: No such file or directory
  failed to dlopen "libserver_valve.so" error=libserver_valve.so: cannot open shared object file: No such file or directory
-Loaded /server/game/csgo/bin/linuxsteamrt64/libserver.so, got 0x56036cca9630
+Loaded /server/game/csgo/bin/linuxsteamrt64/libserver.so, got 0x562466ea9f40
 Physics Console Communications is not initialized
-Loaded /server/game/bin/linuxsteamrt64/libengine2.so, got 0x56036ca6f2b0
-Loaded /server/game/csgo/bin/linuxsteamrt64/libhost.so, got 0x56036ccd9de0
-Loaded /server/game/bin/linuxsteamrt64/libscenefilecache.so, got 0x56036cced370
-Loaded /server/game/bin/linuxsteamrt64/libparticles.so, got 0x56036ccff460
-Loaded /server/game/csgo/bin/linuxsteamrt64/libmatchmaking.so, got 0x56036cd12e10
+Loaded /server/game/bin/linuxsteamrt64/libengine2.so, got 0x562466c6f340
+Loaded /server/game/csgo/bin/linuxsteamrt64/libhost.so, got 0x562466eda6f0
+Loaded /server/game/bin/linuxsteamrt64/libscenefilecache.so, got 0x562466eedc80
+Loaded /server/game/bin/linuxsteamrt64/libparticles.so, got 0x562466effd70
+Loaded /server/game/csgo/bin/linuxsteamrt64/libmatchmaking.so, got 0x562466f13720
 No .vcds loaded or no scenes/scenes.vrman
 GameTypes: missing mapgroupsSP entry for game type/mode (custom/custom).
 GameTypes: missing mapgroupsSP entry for game type/mode (cooperative/cooperative).
@@ -98,18 +98,17 @@ GameTypes: missing mapgroupsSP entry for game type/mode (cooperative/coopmission
 Event System loaded 93 events from file: vpk:/server/game/core/pak01.vpk:resource/core.gameevents.
 Event System loaded 50 events from file: vpk:/server/game/csgo/pak01.vpk:resource/game.gameevents.
 Event System loaded 152 events from file: vpk:/server/game/csgo/pak01.vpk:./resource/mod.gameevents.
-CEntitySystem::BuildEntityNetworking (parallel build of server) took 15.034 msecs for 218 out of 297 classes
-[STARTUP] {0.828} server module init ok
+CEntitySystem::BuildEntityNetworking (parallel build of server) took 19.194 msecs for 218 out of 297 classes
+[STARTUP] {2.102} server module init ok
 CHostStateMgr::QueueNewRequest( Idle (console), 1 )
 Source2Init OK
 HostStateRequest::Start(HSR_IDLE):  loop(console) id(1) addons() desc(Idle (console))
 SwitchToLoop console requested:  id [1] addons []
 Host activate: Idle (console)
-Server:  Inactive
-Client:  Disconnected
------ Status -----
-@ Current  :  console
-CHostStateMgr::QueueNewRequest( Quitting, 2 )
+Loading map "de_dust2"
+CHostStateMgr::QueueNewRequest( Loading (de_dust2), 2 )
+CHostStateMgr::QueueNewRequest( Quitting, 3 )
+Discarding queued request 'Loading (de_dust2), 2'
 HostStateRequest::Start(HSR_QUIT)
 Host activate: Quitting
 Dispatching EventAppShutdown_t {
@@ -118,9 +117,9 @@ Requested non-existent write path USRLOCAL!
 Error writing user config file 'cfg/cs2_user_keys_0_slot0.vcfg'
 Requested non-existent write path USRLOCAL!
 Requested non-existent write path USRLOCAL!
+Requested non-existent write path USRLOCAL!
 Error writing user config file 'cfg/cs2_user_convars_0_slot0.vcfg'
 } Dispatched EventAppShutdown_t
-Requested non-existent write path USRLOCAL!
 MainLoop returning
 Source2Shutdown
 ShutdownSource2Logging
