@@ -271,24 +271,40 @@ if [ ! "$NO_TEST" = 'true' ]; then
     date
     # srcds/cs2
     if  [ "$APPID" = 730 ]; then
-        time docker run -t --rm "$GAME_IMAGE" "$GAME_BIN -dedicated +status +quit"
+        CONTAINER_ID=$( docker run -itd --rm "$GAME_IMAGE" "$GAME_BIN -dedicated -port 27015 +map de_dust2" )
+        CONTAINER_IP=$( docker inspect "$CONTAINER_ID" -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' )
+        i=0; while [ "$i" -lt 10 ]; do
+            echo "Waiting for server to start"
+            docker logs "$CONTAINER_ID" | grep 'VAC secure mode is activated' && break || sleep 3
+            i=$(($i + 1))
+        done
+        docker logs "$CONTAINER_ID"
+        docker exec -it "$CONTAINER_ID" bash -c 'printf "\\xff\\xff\\xff\\xffTSource Engine Query\\x00" | nc -w1 -u 127.0.0.1 27015 | tr "[:cntrl:]" "\\n"' | tee "$TEST_DIR/test" \
+            && docker rm -f "$CONTAINER_ID" \
+            || docker rm -f "$CONTAINER_ID"
     else
-        time docker run -t --rm "$GAME_IMAGE" "$GAME_BIN -game $GAME +version +exit" | tee "$TEST_DIR/test"
+        time docker run -t --rm "$GAME_IMAGE" "$GAME_BIN -game $GAME +version +exit"
     fi
     date
 
-    if  [ ! "$APPID" = 730 ]; then
-        # Verify game version of the game image matches the value of GAME_VERSION
-        echo 'Verifying game image game version'
-        GAME_IMAGE_VERSION_LINES=$( cat "$TEST_DIR/test" | grep -iE '\bexe\b|version' | sed 's/[^0-9]//g' )
-        if ! echo "$GAME_IMAGE_VERSION_LINES" | grep -E "^$GAME_VERSION" > /dev/null; then
-            echo "Game version does not match GAME_VERSION=$GAME_VERSION"
-            echo 'GAME_IMAGE_VERSION_LINES:'
-            echo "$GAME_IMAGE_VERSION_LINES"
-            exit 1
+    # Verify game version of the game image matches the value of GAME_VERSION
+    echo 'Verifying game image game version'
+    GAME_IMAGE_VERSION_LINES=$(
+        if  [ "$APPID" = 730 ]; then
+            cat "$TEST_DIR/test" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+'
+        else
+            cat "$TEST_DIR/test" | grep -iE '\bexe\b|version'
         fi
-        rm -f "$TEST_DIR/test"
+    )
+    echo 'GAME_IMAGE_VERSION_LINES:'
+    echo "$GAME_IMAGE_VERSION_LINES"
+    if echo "$GAME_IMAGE_VERSION_LINES" | sed 's/[^0-9]//g' | grep -E "^$GAME_VERSION" > /dev/null; then
+        echo "Game version matches GAME_VERSION=$GAME_VERSION"
+    else
+        echo "Game version does not match GAME_VERSION=$GAME_VERSION"
+        exit 1
     fi
+    rm -f "$TEST_DIR/test"
 fi
 
 # Push the game image
