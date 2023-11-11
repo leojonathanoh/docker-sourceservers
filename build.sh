@@ -274,6 +274,7 @@ if [ ! "$NO_TEST" = 'true' ]; then
         CONTAINER_ID=$( docker run -itd "$GAME_IMAGE" "$GAME_BIN -dedicated -port 27015 +map de_dust2" )
         i=0; while [ "$i" -lt 30 ]; do
             echo "Waiting for server to start"
+            docker container inspect -f '{{.State.Running}}' "$CONTAINER_ID" | grep '^true$' > /dev/null || break
             docker logs "$CONTAINER_ID" | grep 'VAC secure mode is activated' && break || sleep 1
             i=$(($i + 1))
         done
