@@ -81,7 +81,6 @@ RUN --mount=type=secret,id=STEAM_USERNAME \
             package \
             public \
             siteserverui \
-            steamcmd.sh \
             steam \
             linux32/libtier0_s.so \
             linux32/libvstdlib_s.so \
