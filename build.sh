@@ -271,16 +271,15 @@ if [ ! "$NO_TEST" = 'true' ]; then
     date
     # srcds/cs2
     if  [ "$APPID" = 730 ]; then
-        CONTAINER_ID=$( docker run -itd --rm "$GAME_IMAGE" "$GAME_BIN -dedicated -port 27015 +map de_dust2" )
+        CONTAINER_ID=$( docker run -itd "$GAME_IMAGE" "$GAME_BIN -dedicated -port 27015 +map de_dust2" )
         i=0; while [ "$i" -lt 30 ]; do
             echo "Waiting for server to start"
             docker logs "$CONTAINER_ID" | grep 'VAC secure mode is activated' && break || sleep 1
             i=$(($i + 1))
         done
         docker logs "$CONTAINER_ID"
-        docker exec -it "$CONTAINER_ID" bash -c 'printf "\\xff\\xff\\xff\\xffTSource Engine Query\\x00" | nc -w1 -u 127.0.0.1 27015 | tr "[:cntrl:]" "\\n"' | tee "$TEST_DIR/test" \
-            && docker rm -f "$CONTAINER_ID" \
-            || docker rm -f "$CONTAINER_ID"
+        docker exec -it "$CONTAINER_ID" bash -c 'printf "\\xff\\xff\\xff\\xffTSource Engine Query\\x00" | nc -w1 -u 127.0.0.1 27015 | tr "[:cntrl:]" "\\n"' | tee "$TEST_DIR/test"
+        docker rm -f "$CONTAINER_ID" > /dev/null
     else
         time docker run -t --rm "$GAME_IMAGE" "$GAME_BIN -game $GAME +version +exit" | tee "$TEST_DIR/test"
     fi
