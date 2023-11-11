@@ -272,7 +272,6 @@ if [ ! "$NO_TEST" = 'true' ]; then
     # srcds/cs2
     if  [ "$APPID" = 730 ]; then
         CONTAINER_ID=$( docker run -itd --rm "$GAME_IMAGE" "$GAME_BIN -dedicated -port 27015 +map de_dust2" )
-        CONTAINER_IP=$( docker inspect "$CONTAINER_ID" -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' )
         i=0; while [ "$i" -lt 30 ]; do
             echo "Waiting for server to start"
             docker logs "$CONTAINER_ID" | grep 'VAC secure mode is activated' && break || sleep 1
