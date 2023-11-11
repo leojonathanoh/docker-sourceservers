@@ -86,7 +86,6 @@ RUN --mount=type=secret,id=STEAM_USERNAME \
             linux32/libvstdlib_s.so \
             linux32/steamconsole.so \
             update_hosts_cached.vdf; \
-        rm -rf /root/.steam; \
     else \
         cd "$STEAMCMD_DIR" && rm -rf \
             linux64 \
