@@ -22,6 +22,19 @@ jobs:
     # - name: Ignore git permissions
     #   run: |
     #     git config --global --add safe.directory "$( pwd )"
+    - name: Test
+      run: |
+        set +e -x
+        nslookup client-download.steampowered.com
+        getent hosts client-download.steampowered.com
+        nslookup client-download.steampowered.com 1.1.1.1
+        getent hosts client-download.steampowered.com 1.1.1.1
+        cat /etc/nsswitch.conf
+        cat /etc/resolv.conf
+        # rm -rf /steamcmd/*
+        # cd /steamcmd
+        # STEAMCMD_AR_URL=https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+        # curl -sqL "$STEAMCMD_AR_URL" | tar -zxvf -
     - name: Test build
       run: |
         ./build.sh --env-file ./test/build-hlds-cstrike.env
